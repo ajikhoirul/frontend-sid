@@ -1,0 +1,22 @@
+@media (max-width: 768px) {
+  .table td:first-child {
+    width: 50px;
+  }
+
+  .tambah {
+    width: 90px;
+  }
+
+  .btn-tambah i {
+    display: none;
+  }
+
+  .cari {
+    width: 150px;
+  }
+
+  .edit {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
