@@ -27,7 +27,7 @@ const FileList = () => {
 
   const getUnduhan = async () => {
     const response = await axios.get(
-      `http://localhost:5000/unduhan?search_query=${keyword}&page=${page}&limit=${limit}`
+      `http://13.229.115.11:5000/unduhan?search_query=${keyword}&page=${page}&limit=${limit}`
     );
     setUnduhan(response.data.result);
     setPage(response.data.page);
@@ -36,7 +36,7 @@ const FileList = () => {
   };
 
   const deleteUnduhan = async (unduhanId) => {
-    await axios.delete(`http://localhost:5000/unduhan/${unduhanId}`);
+    await axios.delete(`http://13.229.115.11:5000/unduhan/${unduhanId}`);
     setShowAlert(true);
     getUnduhan();
   };
@@ -60,7 +60,7 @@ const FileList = () => {
 
   const aktifUnduhan = async (unduhanId) => {
     try {
-      await axios.patch(`http://localhost:5000/unduhan-aktif/${unduhanId}`);
+      await axios.patch(`http://13.229.115.11:5000/unduhan-aktif/${unduhanId}`);
       getUnduhan();
     } catch (error) {
       console.log(error);

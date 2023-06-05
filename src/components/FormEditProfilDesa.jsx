@@ -15,7 +15,7 @@ const FormEditProfilDesa = () => {
     const getProfilById = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/profil-desa/${id}`
+          `http://13.229.115.11:5000/profil-desa/${id}`
         );
         setNama(response.data.nama_desa);
         setEmail(response.data.email);
@@ -33,7 +33,7 @@ const FormEditProfilDesa = () => {
   const updateProfil = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/profil-desa/${id}`, {
+      await axios.patch(`http://13.229.115.11:5000/profil-desa/${id}`, {
         nama_desa: nama,
         email: email,
         alamat: alamat,

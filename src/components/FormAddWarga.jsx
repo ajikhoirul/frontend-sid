@@ -14,7 +14,7 @@ const FormAddWarga = () => {
   const saveWarga = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/warga", {
+      await axios.post("http://13.229.115.11:5000/warga", {
         nama_lengkap: nama_lengkap,
         nik: nik,
         kelamin: kelamin,

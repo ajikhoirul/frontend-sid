@@ -24,7 +24,7 @@ const PermohonanList = () => {
 
   const getPermohonan = async () => {
     const response = await axios.get(
-      `http://localhost:5000/permohonan?search_query=${keyword}&page=${page}&limit=${limit}`
+      `http://13.229.115.11:5000/permohonan?search_query=${keyword}&page=${page}&limit=${limit}`
     );
     setPermohonan(response.data.result);
     setPage(response.data.page);
@@ -33,7 +33,7 @@ const PermohonanList = () => {
   };
 
   const deletePermohonan = async (permohonanId) => {
-    await axios.delete(`http://localhost:5000/permohonan/${permohonanId}`);
+    await axios.delete(`http://13.229.115.11:5000/permohonan/${permohonanId}`);
     setShowAlert(true);
     getPermohonan();
   };

@@ -16,13 +16,15 @@ const PertanyaanList = () => {
   }, []);
 
   const getPertanyaan = async () => {
-    const response = await axios.get("http://localhost:5000/pertanyaan");
+    const response = await axios.get("http://13.229.115.11:5000/pertanyaan");
     setPertanyaan(response.data);
   };
 
   const deletePertanyaan = async (pertanyaanId) => {
     try {
-      await axios.delete(`http://localhost:5000/pertanyaan/${pertanyaanId}`);
+      await axios.delete(
+        `http://13.229.115.11:5000/pertanyaan/${pertanyaanId}`
+      );
       setShowAlert(true);
       getPertanyaan();
     } catch (error) {

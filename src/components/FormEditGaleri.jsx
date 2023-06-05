@@ -13,7 +13,9 @@ const FormEditGaleri = () => {
   useEffect(() => {
     const getGaleriById = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/galeri/${id}`);
+        const response = await axios.get(
+          `http://13.229.115.11:5000/galeri/${id}`
+        );
         setJudul(response.data.judul);
         setFile(response.data.gambar);
         setPreview(response.data.url);
@@ -38,7 +40,7 @@ const FormEditGaleri = () => {
     formData.append("file", file);
     formData.append("judul", judul);
     try {
-      await axios.patch(`http://localhost:5000/galeri/${id}`, formData, {
+      await axios.patch(`http://13.229.115.11:5000/galeri/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

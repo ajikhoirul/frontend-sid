@@ -14,7 +14,9 @@ const FormEditWarga = () => {
   useEffect(() => {
     const getWargaById = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/warga/${id}`);
+        const response = await axios.get(
+          `http://13.229.115.11:5000/warga/${id}`
+        );
         setNama(response.data.nama_lengkap);
         setNik(response.data.nik);
         setKelamin(response.data.kelamin);
@@ -31,7 +33,7 @@ const FormEditWarga = () => {
   const updateWarga = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/warga/${id}`, {
+      await axios.patch(`http://13.229.115.11:5000/warga/${id}`, {
         nama_lengkap: nama_lengkap,
         nik: nik,
         kelamin: kelamin,

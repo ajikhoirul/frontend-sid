@@ -17,7 +17,7 @@ const FormEditFasilitas = () => {
     const getFasilitasById = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/fasilitas/${id}`
+          `http://13.229.115.11:5000/fasilitas/${id}`
         );
         setNama(response.data.nama);
         setWaktu(response.data.waktu);
@@ -49,7 +49,7 @@ const FormEditFasilitas = () => {
     formData.append("nominal", nominal);
     formData.append("alamat", alamat);
     try {
-      await axios.patch(`http://localhost:5000/fasilitas/${id}`, formData, {
+      await axios.patch(`http://13.229.115.11:5000/fasilitas/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

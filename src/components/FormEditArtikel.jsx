@@ -16,7 +16,9 @@ const FormEditArtikel = () => {
   useEffect(() => {
     const getArtikelById = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/artikel/${id}`);
+        const response = await axios.get(
+          `http://13.229.115.11:5000/artikel/${id}`
+        );
         setJudul(response.data.judul);
         setIsi(response.data.isi);
         setFile(response.data.gambar);
@@ -43,7 +45,7 @@ const FormEditArtikel = () => {
     formData.append("judul", judul);
     formData.append("isi", isi);
     try {
-      await axios.patch(`http://localhost:5000/artikel/${id}`, formData, {
+      await axios.patch(`http://13.229.115.11:5000/artikel/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

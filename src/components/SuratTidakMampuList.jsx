@@ -25,7 +25,7 @@ const SuratTidakMampuList = () => {
 
   const getSuratTdk = async () => {
     const response = await axios.get(
-      `http://localhost:5000/surat-tidak-mampu?search_query=${keyword}&page=${page}&limit=${limit}`
+      `http://13.229.115.11:5000/surat-tidak-mampu?search_query=${keyword}&page=${page}&limit=${limit}`
     );
     setSuratTdk(response.data.result);
     setPage(response.data.page);
@@ -34,7 +34,9 @@ const SuratTidakMampuList = () => {
   };
 
   const deleteSuratTdk = async (suratdkId) => {
-    await axios.delete(`http://localhost:5000/surat-tidak-mampu/${suratdkId}`);
+    await axios.delete(
+      `http://13.229.115.11:5000/surat-tidak-mampu/${suratdkId}`
+    );
     setShowAlert(true);
     getSuratTdk();
   };
@@ -59,7 +61,7 @@ const SuratTidakMampuList = () => {
   const aktfiSuratTdk = async (suratdkId) => {
     try {
       await axios.patch(
-        `http://localhost:5000/surat-tidak-mampu-aktif/${suratdkId}`
+        `http://13.229.115.11:5000/surat-tidak-mampu-aktif/${suratdkId}`
       );
       getSuratTdk();
     } catch (error) {

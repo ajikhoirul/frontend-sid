@@ -12,7 +12,7 @@ const GaleriList = () => {
   }, []);
 
   const getGaleri = async () => {
-    const response = await axios.get("http://localhost:5000/galeri");
+    const response = await axios.get("http://13.229.115.11:5000/galeri");
     setGaleri(response.data);
   };
   return (

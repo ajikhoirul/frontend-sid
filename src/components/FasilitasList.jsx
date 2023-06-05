@@ -18,13 +18,13 @@ const FasilitasList = () => {
   }, []);
 
   const getFasilitas = async () => {
-    const response = await axios.get("http://localhost:5000/fasilitas");
+    const response = await axios.get("http://13.229.115.11:5000/fasilitas");
     setFasilitas(response.data);
   };
 
   const deleteFasilitas = async (fasilitasId) => {
     try {
-      await axios.delete(`http://localhost:5000/fasilitas/${fasilitasId}`);
+      await axios.delete(`http://13.229.115.11:5000/fasilitas/${fasilitasId}`);
       setShowAlert(true);
       getFasilitas();
     } catch (error) {
@@ -48,7 +48,9 @@ const FasilitasList = () => {
 
   const aktifFasilitas = async (fasilitasId) => {
     try {
-      await axios.patch(`http://localhost:5000/fasilitas-aktif/${fasilitasId}`);
+      await axios.patch(
+        `http://13.229.115.11:5000/fasilitas-aktif/${fasilitasId}`
+      );
       getFasilitas();
     } catch (error) {
       console.log(error);

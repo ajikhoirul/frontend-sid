@@ -18,13 +18,13 @@ const ArtikelList = () => {
   }, []);
 
   const getArtikel = async () => {
-    const response = await axios.get("http://localhost:5000/artikel");
+    const response = await axios.get("http://13.229.115.11:5000/artikel");
     setArtikel(response.data);
   };
 
   const deleteArtikel = async (artikelId) => {
     try {
-      await axios.delete(`http://localhost:5000/artikel/${artikelId}`);
+      await axios.delete(`http://13.229.115.11:5000/artikel/${artikelId}`);
       setShowAlert(true);
       getArtikel();
     } catch (error) {
@@ -48,7 +48,7 @@ const ArtikelList = () => {
 
   const aktifArtikel = async (artikelId) => {
     try {
-      await axios.patch(`http://localhost:5000/artikel-aktif/${artikelId}`);
+      await axios.patch(`http://13.229.115.11:5000/artikel-aktif/${artikelId}`);
       getArtikel();
     } catch (error) {
       console.log(error);

@@ -12,7 +12,7 @@ const CompStruktur = () => {
   }, []);
 
   const getStruktur = async () => {
-    const response = await axios.get("http://localhost:5000/struktur-desa");
+    const response = await axios.get("http://13.229.115.11:5000/struktur-desa");
     setStruktur(response.data);
   };
   return (

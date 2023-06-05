@@ -12,7 +12,7 @@ const CompTentangDesa = () => {
   }, []);
 
   const getTentangDesa = async () => {
-    const response = await axios.get("http://localhost:5000/tentang-desa");
+    const response = await axios.get("http://13.229.115.11:5000/tentang-desa");
     setTentangDesa(response.data);
   };
   return (

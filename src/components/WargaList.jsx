@@ -24,7 +24,7 @@ const WargaList = () => {
 
   const getWarga = async () => {
     const response = await axios.get(
-      `http://localhost:5000/warga?search_query=${keyword}&page=${page}&limit=${limit}`
+      `http://13.229.115.11:5000/warga?search_query=${keyword}&page=${page}&limit=${limit}`
     );
     setWarga(response.data.result);
     setPage(response.data.page);
@@ -33,7 +33,7 @@ const WargaList = () => {
   };
 
   const deleteWarga = async (wargaId) => {
-    await axios.delete(`http://localhost:5000/warga/${wargaId}`);
+    await axios.delete(`http://13.229.115.11:5000/warga/${wargaId}`);
     setShowAlert(true);
     getWarga();
   };

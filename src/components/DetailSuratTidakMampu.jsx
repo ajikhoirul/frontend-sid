@@ -36,7 +36,7 @@ const DetailSuratTidakMampu = () => {
   const getSuratTdkById = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/surat-tidak-mampu/${id}`
+        `http://13.229.115.11:5000/surat-tidak-mampu/${id}`
       );
       setIdSurat(response.data.id_surat_tidak_mampu);
       setPemohon(response.data.pemohon);
@@ -64,7 +64,7 @@ const DetailSuratTidakMampu = () => {
   const aktfiSuratTdk = async (suratdkId) => {
     try {
       await axios.patch(
-        `http://localhost:5000/surat-tidak-mampu-aktif/${suratdkId}`
+        `http://13.229.115.11:5000/surat-tidak-mampu-aktif/${suratdkId}`
       );
       alert("Data telah berhasil diproses");
       getSuratTdkById();

@@ -16,7 +16,7 @@ const FormEditTentangDesa = () => {
     const getTentangDesaById = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/tentang-desa/${id}`
+          `http://13.229.115.11:5000/tentang-desa/${id}`
         );
         setTentang(response.data.tentang);
         setFile(response.data.gambar);
@@ -42,11 +42,15 @@ const FormEditTentangDesa = () => {
     formData.append("file", file);
     formData.append("tentang", tentang);
     try {
-      await axios.patch(`http://localhost:5000/tentang-desa/${id}`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await axios.patch(
+        `http://13.229.115.11:5000/tentang-desa/${id}`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       alert("Data berhasil diubah");
       navigate("/tentang-desa");
     } catch (error) {

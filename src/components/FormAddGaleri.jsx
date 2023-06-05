@@ -21,7 +21,7 @@ const FormAddGaleri = () => {
     formData.append("file", file);
     formData.append("judul", judul);
     try {
-      await axios.post("http://localhost:5000/galeri", formData, {
+      await axios.post("http://13.229.115.11:5000/galeri", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

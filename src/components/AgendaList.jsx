@@ -27,7 +27,7 @@ const AgendaList = () => {
 
   const getAgenda = async () => {
     const response = await axios.get(
-      `http://localhost:5000/agenda?search_query=${keyword}&page=${page}&limit=${limit}`
+      `http://13.229.115.11:5000/agenda?search_query=${keyword}&page=${page}&limit=${limit}`
     );
     setAgenda(response.data.result);
     setPage(response.data.page);
@@ -36,7 +36,7 @@ const AgendaList = () => {
   };
 
   const deleteAgenda = async (agendaId) => {
-    await axios.delete(`http://localhost:5000/agenda/${agendaId}`);
+    await axios.delete(`http://13.229.115.11:5000/agenda/${agendaId}`);
     setShowAlert(true);
     getAgenda();
   };
@@ -60,7 +60,7 @@ const AgendaList = () => {
 
   const aktifAgenda = async (agendaId) => {
     try {
-      await axios.patch(`http://localhost:5000/agenda-aktif/${agendaId}`);
+      await axios.patch(`http://13.229.115.11:5000/agenda-aktif/${agendaId}`);
       getAgenda();
     } catch (error) {
       console.log(error);

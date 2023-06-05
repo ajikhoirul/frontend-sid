@@ -16,7 +16,7 @@ const FormEditStruktur = () => {
     const getStrukturById = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/struktur-desa/${id}`
+          `http://13.229.115.11:5000/struktur-desa/${id}`
         );
         setText(response.data.text);
         setFile(response.data.gambar);
@@ -42,11 +42,15 @@ const FormEditStruktur = () => {
     formData.append("file", file);
     formData.append("text", text);
     try {
-      await axios.patch(`http://localhost:5000/struktur-desa/${id}`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await axios.patch(
+        `http://13.229.115.11:5000/struktur-desa/${id}`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       alert("Data berhasil diubah");
       navigate("/struktur-desa");
     } catch (error) {

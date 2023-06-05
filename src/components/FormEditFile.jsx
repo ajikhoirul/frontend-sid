@@ -13,7 +13,9 @@ const FormEditFile = () => {
   useEffect(() => {
     const getFileById = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/unduhan/${id}`);
+        const response = await axios.get(
+          `http://13.229.115.11:5000/unduhan/${id}`
+        );
         setNama(response.data.nama);
         setFile(response.data.file);
         setNamaFile(response.data.file);
@@ -39,7 +41,7 @@ const FormEditFile = () => {
     formData.append("file", file);
     formData.append("nama", nama);
     try {
-      await axios.patch(`http://localhost:5000/unduhan/${id}`, formData, {
+      await axios.patch(`http://13.229.115.11:5000/unduhan/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

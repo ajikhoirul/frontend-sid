@@ -13,7 +13,9 @@ const FormEditVideo = () => {
   useEffect(() => {
     const getVideoById = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/video/${id}`);
+        const response = await axios.get(
+          `http://13.229.115.11:5000/video/${id}`
+        );
         setJudul(response.data.judul);
         setSumber(response.data.sumber);
         setUrl(response.data.url);
@@ -29,7 +31,7 @@ const FormEditVideo = () => {
   const updateVideo = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/video/${id}`, {
+      await axios.patch(`http://13.229.115.11:5000/video/${id}`, {
         judul: judul,
         sumber: sumber,
         url: url,

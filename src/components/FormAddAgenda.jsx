@@ -13,7 +13,7 @@ const FormAddAgenda = () => {
   const saveAgenda = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/agenda", {
+      await axios.post("http://13.229.115.11:5000/agenda", {
         judul: judul,
         waktu: waktu,
         lokasi: lokasi,

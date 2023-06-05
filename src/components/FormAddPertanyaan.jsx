@@ -13,7 +13,7 @@ const FormAddPertanyaan = () => {
   const savePertanyaan = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/pertanyaan", {
+      await axios.post("http://13.229.115.11:5000/pertanyaan", {
         judul: judul,
         jawab: jawab,
       });

@@ -12,7 +12,7 @@ const CompVideo = () => {
   }, []);
 
   const getVideo = async () => {
-    const response = await axios.get("http://localhost:5000/video");
+    const response = await axios.get("http://13.229.115.11:5000/video");
     setVideo(response.data);
   };
   return (

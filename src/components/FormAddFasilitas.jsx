@@ -27,7 +27,7 @@ const FormAddFasilitas = () => {
     formData.append("nominal", nominal);
     formData.append("alamat", alamat);
     try {
-      await axios.post("http://localhost:5000/fasilitas", formData, {
+      await axios.post("http://13.229.115.11:5000/fasilitas", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

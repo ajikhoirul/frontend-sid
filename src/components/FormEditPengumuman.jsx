@@ -15,7 +15,7 @@ const FormEditPengumuman = () => {
     const getPengumumanById = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/pengumuman/${id}`
+          `http://13.229.115.11:5000/pengumuman/${id}`
         );
         setJudul(response.data.judul);
         setIsi(response.data.isi);
@@ -31,7 +31,7 @@ const FormEditPengumuman = () => {
   const updatePengumuman = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/pengumuman/${id}`, {
+      await axios.patch(`http://13.229.115.11:5000/pengumuman/${id}`, {
         judul: judul,
         isi: isi,
       });

@@ -24,7 +24,7 @@ const UserList = () => {
 
   const getUsers = async () => {
     const response = await axios.get(
-      `http://localhost:5000/users?search_query=${keyword}&page=${page}&limit=${limit}`
+      `http://13.229.115.11:5000/users?search_query=${keyword}&page=${page}&limit=${limit}`
     );
     setUsers(response.data.result);
     setPage(response.data.page);
@@ -33,7 +33,7 @@ const UserList = () => {
   };
 
   const deleteUser = async (userId) => {
-    await axios.delete(`http://localhost:5000/users/${userId}`);
+    await axios.delete(`http://13.229.115.11:5000/users/${userId}`);
     setShowAlert(true);
     getUsers();
   };

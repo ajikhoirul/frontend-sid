@@ -18,13 +18,15 @@ const PengumumanList = () => {
   }, []);
 
   const getPengumuman = async () => {
-    const response = await axios.get("http://localhost:5000/pengumuman");
+    const response = await axios.get("http://13.229.115.11:5000/pengumuman");
     setPengumuman(response.data);
   };
 
   const deletePengumuman = async (pengumumanId) => {
     try {
-      await axios.delete(`http://localhost:5000/pengumuman/${pengumumanId}`);
+      await axios.delete(
+        `http://13.229.115.11:5000/pengumuman/${pengumumanId}`
+      );
       setShowAlert(true);
       getPengumuman();
     } catch (error) {
@@ -49,7 +51,7 @@ const PengumumanList = () => {
   const aktifPengumuman = async (pengumumanId) => {
     try {
       await axios.patch(
-        `http://localhost:5000/pengumuman-aktif/${pengumumanId}`
+        `http://13.229.115.11:5000/pengumuman-aktif/${pengumumanId}`
       );
       getPengumuman();
     } catch (error) {

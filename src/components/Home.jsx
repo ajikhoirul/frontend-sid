@@ -31,7 +31,7 @@ const Home = () => {
 
   const getEvent = async () => {
     await axios
-      .get("http://localhost:5000/event")
+      .get("http://13.229.115.11:5000/event")
       .then((response) => {
         setEvents(response.data);
       })
@@ -41,19 +41,21 @@ const Home = () => {
   };
 
   const getCountWarga = async () => {
-    const response = await axios.get("http://localhost:5000/countwarga");
+    const response = await axios.get("http://13.229.115.11:5000/countwarga");
     setCountWarga(response.data);
   };
   const getCountFasilitas = async () => {
-    const response = await axios.get("http://localhost:5000/countfasilitas");
+    const response = await axios.get(
+      "http://13.229.115.11:5000/countfasilitas"
+    );
     setCountFasilitas(response.data);
   };
   const getCountArtikel = async () => {
-    const response = await axios.get("http://localhost:5000/countartikel");
+    const response = await axios.get("http://13.229.115.11:5000/countartikel");
     setCountArtikel(response.data);
   };
   const getCountAgenda = async () => {
-    const response = await axios.get("http://localhost:5000/countagenda");
+    const response = await axios.get("http://13.229.115.11:5000/countagenda");
     setCountAgenda(response.data);
   };
 
@@ -62,7 +64,7 @@ const Home = () => {
   //   if (title) {
   //     const newEvent = { title, start: arg.date };
   //     axios
-  //       .post("http://localhost:5000/event", newEvent)
+  //       .post("http://13.229.115.11:5000/event", newEvent)
   //       .then((response) => {
   //         setEvents([...events, response.data]);
   //       })
@@ -79,7 +81,7 @@ const Home = () => {
       const end = arg.endStr;
       const newEvent = { title, start, end };
       await axios
-        .post("http://localhost:5000/event", newEvent)
+        .post("http://13.229.115.11:5000/event", newEvent)
         .then((response) => {
           setEvents([...events, response.data]);
         })
@@ -96,7 +98,7 @@ const Home = () => {
       )
     ) {
       axios
-        .delete(`http://localhost:5000/event/${arg.event.id}`)
+        .delete(`http://13.229.115.11:5000/event/${arg.event.id}`)
         .then(() => {
           setEvents(events.filter((event) => event.id !== arg.event.id));
           getEvent();
@@ -110,7 +112,7 @@ const Home = () => {
   const saveEvent = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/event", {
+      await axios.post("http://13.229.115.11:5000/event", {
         title: title,
         start: start,
         end: end,

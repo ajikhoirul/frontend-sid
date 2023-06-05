@@ -15,7 +15,7 @@ const FormEditPertanyaan = () => {
     const getPertanyaanById = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/pertanyaan/${id}`
+          `http://13.229.115.11:5000/pertanyaan/${id}`
         );
         setJudul(response.data.judul);
         setJawab(response.data.jawab);
@@ -31,7 +31,7 @@ const FormEditPertanyaan = () => {
   const updatePertanyaan = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/pertanyaan/${id}`, {
+      await axios.patch(`http://13.229.115.11:5000/pertanyaan/${id}`, {
         judul: judul,
         jawab: jawab,
       });

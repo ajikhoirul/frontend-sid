@@ -25,7 +25,7 @@ const SideNav = () => {
 
   const getCountSuratTdk = async () => {
     const response = await axios.get(
-      "http://localhost:5000/count-surat-tidak-mampu"
+      "http://13.229.115.11:5000/count-surat-tidak-mampu"
     );
     setCountSuratTdk(response.data);
   };

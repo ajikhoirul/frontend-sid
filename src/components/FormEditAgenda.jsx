@@ -13,7 +13,9 @@ const FormEditAgenda = () => {
   useEffect(() => {
     const getAgendaById = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/agenda/${id}`);
+        const response = await axios.get(
+          `http://13.229.115.11:5000/agenda/${id}`
+        );
         setJudul(response.data.judul);
         setWaktu(response.data.waktu);
         setLokasi(response.data.lokasi);
@@ -29,7 +31,7 @@ const FormEditAgenda = () => {
   const updateAgenda = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/agenda/${id}`, {
+      await axios.patch(`http://13.229.115.11:5000/agenda/${id}`, {
         judul: judul,
         waktu: waktu,
         lokasi: lokasi,

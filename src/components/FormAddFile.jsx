@@ -25,7 +25,7 @@ const FormAddFile = () => {
     formData.append("file", file);
     formData.append("nama", nama);
     try {
-      await axios.post("http://localhost:5000/unduhan", formData, {
+      await axios.post("http://13.229.115.11:5000/unduhan", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
